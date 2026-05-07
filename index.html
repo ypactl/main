@@ -7,7 +7,7 @@
 </head>
 <body>
   <style>
-    #rng {
+    .inter {
       color: #009EAA;
     }
     html {
@@ -23,17 +23,25 @@
       color: #ffbf7f
     }
   </style>
+  <p>v0.γ</p>
   <h1>
     Websites that I made. It doesn't look like there's that much, but... I just joined.
   </h1>
   <h2>
-    Random math generator.
+    This website generates a random math equation.
   </h2>
   <a href="https://ypactl.github.io/random-math" class="link">Random Math Generator</a>
   <br>
+  <h2>
+    This websites calculates the square of a specified number using my method.
+  </h2>
+  <a href="https://ypactl.github.io/triangle-square-method" class="link">Triangle Square Method</a>
   <br>
   <br>
-  <h1 id="rng">Press the [random] button to start randomizing.</h1>
-  <button onclick="document.getElementById('rng').innerHTML = Math.floor(1/Math.random()).toString()">random</button>
+  <br>
+  <h1 id="i1" class="inter">Press the [random] button to start randomizing.</h1>
+  <button onclick="document.getElementById('i1').innerHTML = Math.floor(1/Math.random()).toString()">random</button>
+  <h1 id="i2" class="inter">Press the [square] button to square the number above it.</h1>
+  <button onclick="document.getElementById('i2').innerHTML = Number(document.getElementById('i2').innerHTML)**2">square</button>
 </body>
 </html>
