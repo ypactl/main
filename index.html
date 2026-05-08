@@ -48,8 +48,8 @@
   <script>
     const a = performance.now()
     function b() {
-      let h = (performance.now() - a)/1000
-      n = (h/1000+1)*Math.log10(h)
+      let h = Math.max(0.0001, (performance.now() - a)/1000)
+      let n = (h/1000+1)*Math.log10(h)
       if (n < 12) {
         document.getElementById("inc").innerHTML = Math.round(Math.pow(10, n)).toString()
       } else {
