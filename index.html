@@ -57,7 +57,7 @@
       }
       let o = (Math.round(0.005*h*Math.sin(2.5*h))).toString()
       document.getElementById("inc").style= "text-shadow: "+o+"px "+o+"px "+(0.005*h).toString()+"px #ffffff;"
-      document.documentElement.style.backgroundColor = "hsl("+h/1000*360+",100%,25%);"
+      document.documentElement.style.backgroundColor = "hsl("+Math.round(h/1000*360)%360+",100%,25%);"
       requestAnimationFrame(b)
     }
     b()
