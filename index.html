@@ -64,9 +64,9 @@
       let h = Math.max(0.0001, (performance.now() - a)/1000)
       let n = (h/1000+1)*Math.log10(h)
       if (n < 12) {
-        document.getElementById("inc").innerHTML = "<sup>"+h.toFixed(3)+"</sup>"+Math.round(Math.pow(10, n)).toString()
+        document.getElementById("inc").innerHTML = "<sup><sup><sup><sup>"+h.toFixed(3)+"</sup></sup></sup></sup>"+Math.round(Math.pow(10, n)).toString()
       } else {
-        document.getElementById("inc").innerHTML = "<sup>"+h.toFixed(3)+"</sup>"+Math.pow(10, n%1).toFixed(3)+"*10<sup>"+Math.floor(n)+"</sup>"
+        document.getElementById("inc").innerHTML = "<sup><sup><sup><sup>"+h.toFixed(3)+"</sup></sup></sup></sup>"+Math.pow(10, n%1).toFixed(3)+"*10<sup>"+Math.floor(n)+"</sup>"
       }
       let o = (0.005*h*Math.sin(h/2)).toString()
       document.getElementById("inc").style= "text-shadow: "+o+"px "+o+"px "+(0.005*h).toString()+"px #ffffff;"
