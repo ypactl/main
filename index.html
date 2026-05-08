@@ -11,8 +11,8 @@
       color: #009EAA;
     }
     html {
-      background-color: hsl(0,100%,0%);
-      color: #ffffff;
+      background-color: #000000;
+      color: #FFFFFF;
       font-family: "monospace", monospace;
     }
     .link {
@@ -20,7 +20,7 @@
       text-decoration: none;
     }
     .link:hover {
-      color: #ffbf7f
+      color: #FFBF7F;
     }
   </style>
   <p>v<span style="color: #bfbfbf;">0</span>.<span style="color: #7fff00; text-shadow: 0px 0px 4px #3f7f00;">δ</span></p>
@@ -46,6 +46,19 @@
   <br>
   <h1 id="inc" style="text-shadow: 0px 0px 0px #ffffff;">0 (this number should increase)</h1>
   <script>
+    function mod(x, y) {
+      return x - Math.floor(x/y)*y
+    }
+    function HSV1(h, s, v) {
+      let r = Math.min(Math.max(Math.abs(mod(h, 360)-180)/60*255-255, 0), 255)
+      let g = Math.min(Math.max(Math.abs(mod(h-60, 360)-180)/60*255-255, 0), 255)
+      let b = Math.min(Math.max(Math.abs(mod(h+60, 360)-180)/60*255-255, 0), 255)
+      r = Math.round((r*s+255*(1-s))*v)
+      g = Math.round((g*s+255*(1-s))*v)
+      b = Math.round((b*s+255*(1-s))*v)
+      let hex = "0123456789ABCDEF"
+      return "#"+hex[Math.floor(r/16)]+hex[r%16]+hex[Math.floor(g/16)]+hex[g%16]+hex[Math.floor(b/16)]+hex[b%16]
+    }
     const a = performance.now()
     function b() {
       let h = Math.max(0.0001, (performance.now() - a)/1000)
@@ -55,9 +68,9 @@
       } else {
         document.getElementById("inc").innerHTML = "<sup>"+h.toFixed(3)+"</sup>"+Math.pow(10, n%1).toFixed(3)+"*10<sup>"+Math.floor(n)+"</sup>"
       }
-      let o = (Math.round(0.005*h*Math.sin(2.5*h))).toString()
+      let o = (0.005*h*Math.sin(h/2)).toString()
       document.getElementById("inc").style= "text-shadow: "+o+"px "+o+"px "+(0.005*h).toString()+"px #ffffff;"
-      document.documentElement.style.backgroundColor = "hsl("+Math.round(h/1000*360)%360+",100%,25%);"
+      document.documentElement.style.backgroundColor = HSV1(h/1000*360, 1, 0.25)
       requestAnimationFrame(b)
     }
     b()
