@@ -11,8 +11,8 @@
       color: #009EAA;
     }
     html {
-      background-color: black;
-      color: white;
+      background-color: hsl(0,1,0);
+      color: #ffffff;
       font-family: "monospace", monospace;
     }
     .link {
@@ -23,7 +23,7 @@
       color: #ffbf7f
     }
   </style>
-  <p>v<span style="color: #bfbfbf;">0</span>.<span style="color: #ffff00; text-shadow: 0px 0px 4px #7f7f00;">γ</span></p>
+  <p>v<span style="color: #bfbfbf;">0</span>.<span style="color: #7fff00; text-shadow: 0px 0px 4px #3f7f00;">δ</span></p>
   <h1>
     Websites that I made. It doesn't look like there's that much, but... I just joined.
   </h1>
@@ -57,6 +57,7 @@
       }
       let o = (Math.round(0.005*h*Math.sin(2.5*h))).toString()
       document.getElementById("inc").style= "text-shadow: "+o+"px "+o+"px "+(0.005*h).toString()+"px #ffffff;"
+      document.documentElement.style.backgroundColor = "hsl("+Math.round(360*(1-1/(h/1000+1)))+",1,"+Math.abs(Math.sin(h/1000*Math.PI))+");"
       requestAnimationFrame(b)
     }
     b()
