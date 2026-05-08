@@ -55,7 +55,8 @@
       } else {
         document.getElementById("inc").innerHTML = Math.pow(10, n%1).toFixed(3)+"*10<sup>"+Math.floor(n)+"</sup>"
       }
-      document.getElementById("inc").style = "text-shadow: "+(5*h*Math.sin(250*h))+"px "+(5*h*Math.sin(250*h))+"px "+(5*h)+"px #ffffff"
+      let o = (5*h*Math.sin(250*h)).toString()
+      document.getElementById("inc").style.textShadow = o+"px "+o+"px "+(5*h).toString()+"px #ffffff"
       requestAnimationFrame(b)
     }
     b()
