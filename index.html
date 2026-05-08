@@ -44,7 +44,7 @@
   <h1 id="i2" class="inter">Press the [square] button to square the number above it.</h1>
   <button onclick="document.getElementById('i2').innerHTML = Number(document.getElementById('i1').innerHTML)**2">square</button>
   <br>
-  <h1 id="inc" style="text-shadow: 0px 0px 0px #ffffff">0 (this number should increase)</h1>
+  <h1 id="inc" style="text-shadow: 0px 0px 0px #ffffff;">0 (this number should increase)</h1>
   <script>
     const a = performance.now()/
     function b() {
@@ -55,8 +55,8 @@
       } else {
         document.getElementById("inc").innerHTML = Math.pow(10, n%1).toFixed(3)+"*10<sup>"+Math.floor(n)+"</sup>"
       }
-      let o = (5*h*Math.sin(250*h)).toString()
-      document.getElementById("inc").style.textShadow = o+"px "+o+"px "+(5*h).toString()+"px #ffffff"
+      let o = (Math.round(5*h*Math.sin(250*h))).toString()
+      document.getElementById("inc").style.textShadow = o+"px "+o+"px "+(5*h).toString()+"px #ffffff;"
       requestAnimationFrame(b)
     }
     b()
