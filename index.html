@@ -43,5 +43,21 @@
   <button onclick="document.getElementById('i1').innerHTML = Math.floor(1/Math.random()).toString()">random</button>
   <h1 id="i2" class="inter">Press the [square] button to square the number above it.</h1>
   <button onclick="document.getElementById('i2').innerHTML = Number(document.getElementById('i1').innerHTML)**2">square</button>
+  <br>
+  <h1 id="inc">0 (this number should increase)</h1>
+  <script>
+    const a = performance.now()
+    function b() {
+      let n = performance.now() - a
+      n = (n/1000+1)*Math.log10(n)
+      if (n < 12) {
+        document.getElementById("inc").innerHTML = Math.round(Math.pow(10, n)).toString()
+      } else {
+        document.getElementById("inc").innerHTML = Math.pow(10, n%1).toFixed(3)+"*10<sup>"+Math.floor(n)+"</sup>"
+      }
+      requestAnimationFrame(b)
+    }
+    b()
+  </script>
 </body>
 </html>
