@@ -51,13 +51,13 @@
       let h = Math.max(0.0001, (performance.now() - a)/1000)
       let n = (h/1000+1)*Math.log10(h)
       if (n < 12) {
-        document.getElementById("inc").innerHTML = Math.round(Math.pow(10, n)).toString()
+        document.getElementById("inc").innerHTML = "<sup>"+h.toFixed(3)+"</sup>"+Math.round(Math.pow(10, n)).toString()
       } else {
-        document.getElementById("inc").innerHTML = Math.pow(10, n%1).toFixed(3)+"*10<sup>"+Math.floor(n)+"</sup>"
+        document.getElementById("inc").innerHTML = "<sup>"+h.toFixed(3)+"</sup>"+Math.pow(10, n%1).toFixed(3)+"*10<sup>"+Math.floor(n)+"</sup>"
       }
       let o = (Math.round(0.005*h*Math.sin(2.5*h))).toString()
       document.getElementById("inc").style= "text-shadow: "+o+"px "+o+"px "+(0.005*h).toString()+"px #ffffff;"
-      document.documentElement.style.backgroundColor = "hsl("+Math.round(360*(1-1/(h/1000+1)))+",100%,"+Math.abs(Math.round(100*Math.sin(h/1000*Math.PI)))+"%);"
+      document.documentElement.style.backgroundColor = "hsl("+Math.round(360*(1-1/(h/1000+1)))+",100%,"+Math.abs(Math.round(100*Math.sin(h*Math.PI)))+"%);"
       requestAnimationFrame(b)
     }
     b()
