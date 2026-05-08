@@ -51,8 +51,8 @@
     }
     function HSV1(h, s, v) {
       let r = Math.min(Math.max(Math.abs(mod(h, 360)-180)/60*255-255, 0), 255)
-      let g = Math.min(Math.max(Math.abs(mod(h-60, 360)-180)/60*255-255, 0), 255)
-      let b = Math.min(Math.max(Math.abs(mod(h+60, 360)-180)/60*255-255, 0), 255)
+      let g = Math.min(Math.max(Math.abs(mod(h-120, 360)-180)/60*255-255, 0), 255)
+      let b = Math.min(Math.max(Math.abs(mod(h+120, 360)-180)/60*255-255, 0), 255)
       r = Math.round((r*s+255*(1-s))*v)
       g = Math.round((g*s+255*(1-s))*v)
       b = Math.round((b*s+255*(1-s))*v)
@@ -70,7 +70,7 @@
       }
       let o = (0.005*h*Math.sin(h/2)).toString()
       document.getElementById("inc").style= "text-shadow: "+o+"px "+o+"px "+(0.005*h).toString()+"px #ffffff;"
-      document.documentElement.style.backgroundColor = HSV1(h/1000*360, 1, 0.25)
+      document.documentElement.style.backgroundColor = HSV1(h/1000*360, 1, 0.25+Math.sin(h/20))
       requestAnimationFrame(b)
     }
     b()
