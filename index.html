@@ -40,9 +40,9 @@
   <br>
   <br>
   <h1 id="i1" class="inter">Press the [random] button to start randomizing.</h1>
-  <button onclick="document.getElementById('i1').innerHTML = Math.floor(1/Math.random()).toString()">random</button>
+  <button onclick="document.getElementById('i1').innerHTML = Math.floor(1/Math.random()).toString()">random</button><label for="i1c">choose</label><input type="text" id="i1c" value=""><button onclick="document.getElementById('i1').innerHTML = document.getElementById('i1c').value">choose</button>
   <h1 id="i2" class="inter">Press the [square] button to square the number above it.</h1>
-  <button onclick="document.getElementById('i2').innerHTML = Number(document.getElementById('i1').innerHTML)**2">square</button>
+  <button onclick="document.getElementById('i2').innerHTML = Number(document.getElementById('i1').innerHTML)**2">square</button><button onclick="document.getElementById('i2').innerHTML = Number(document.getElementById('i2').innerHTML)**2">square</button>
   <br>
   <h1 id="inc" style="text-shadow: 0px 0px 0px #ffffff;">0 (this number should increase)</h1>
   <script>
