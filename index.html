@@ -70,7 +70,7 @@
       }
       let o = (0.005*h*Math.sin(h/2)).toString()
       document.getElementById("inc").style= "text-shadow: "+o+"px "+o+"px "+(0.005*h).toString()+"px #ffffff;"
-      document.documentElement.style.backgroundColor = HSV1(h/1000*360, 1, 0.25+Math.sin(h/20))
+      document.documentElement.style.backgroundColor = HSV1(h/1000*360, 1, 0.25+Math.sin(h/10)/8)
       requestAnimationFrame(b)
     }
     b()
