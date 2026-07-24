@@ -83,6 +83,14 @@
       requestAnimationFrame(b)
     }
     b()
+    let urlparams = new URLSearchParams(new URL(window.location.href).search)
+    if (isEnumerable(urlparams.get("magets"))) {
+      let n = Number(urlparams.get("magets"))
+      let p = document.createElement("h3")
+      p.innerHTML = n+"<br>"+`Did tou think this was going to work?
+      It is a number that has the property where anything that multiplies it will equal this number.
+      It is a number that has the property whete anything that multiplies it will do nothing.`.split("\n")[n+1]
+    }
   </script>
 </body>
 </html>
