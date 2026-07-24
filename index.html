@@ -84,9 +84,9 @@
     }
     b()
     let urlparams = new URLSearchParams(new URL(window.location.href).search)
-    if (isEnumerable(urlparams.get("magets"))) {
+    if (urlparams.get("magets")) {
       let n = Number(urlparams.get("magets"))
-      let p = document.createElement("h3")
+      let p = document.createElement("p")
       p.innerHTML = n+"<br>"+`Did tou think this was going to work?
       It is a number that has the property where anything that multiplies it will equal this number. If you add a number to this number, it will do nothing.
       It is a number that has the property whete anything that multiplies it will do nothing. This number is universal, as it creats every natural number.`.split("\n")[n+1]
