@@ -58,6 +58,7 @@
   <button onclick="document.getElementById('i2').innerHTML = Number(document.getElementById('i1').innerHTML)**2">square</button><button onclick="document.getElementById('i2').innerHTML = Number(document.getElementById('i2').innerHTML)**2">square</button>
   <br>
   <h1 id="inc" style="text-shadow: 0px 0px 0px #ffffff;">0 (this number should increase)</h1>
+  <canvas id="rgbcan" width="200" height="200" onclick="let ct=document.getElementById('rgbcan').getContext('2d');ct.clearRect(0,0,200,200);ct.fillStyle='#'+'......'.split('').map(v => '0123456789ABCDEF'[Math.floor(Math.random()*16)]);ct.fillRect(0,0,200,200)"></canvas>
   <script>
     function mod(x, y) {
       return x - Math.floor(x/y)*y
@@ -93,7 +94,8 @@
       let p = document.createElement("p")
       p.innerHTML = n+"<br>"+`Did tou think this was going to work?
       It is a number that has the property where anything that multiplies it will equal this number. If you add a number to this number, it will do nothing.
-      It is a number that has the property whete anything that multiplies it will do nothing. This number is universal, as it creats every natural number.`.split("\n")[n+1]
+      It is a number that has the property whete anything that multiplies it will do nothing. This number is universal, as it creats every natural number.
+      It is a number used in computers, where its base name is binary. This number is common for the significance of duos and opposites.`.split("\n")[n+1]
       document.body.appendChild(p)
     }
   </script>
