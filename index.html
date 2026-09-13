@@ -31,7 +31,9 @@
       color: #FFBF7F;
     }
   </style>
-  <p>v<span style="color: #bfbfbf;">0</span>.<span style="color: #00ffff; text-shadow: 0px 0px 4px #007f7f, 0px 0px 4px #007f7f;">η</span></p>
+  <p>Set font:</p>
+  <button onclick="document.documentElement.style.fontFamily = 'Exo, monospace'">Exo</button><button onclick="document.documentElement.style.fontFamily = 'Choco Cooky, monospace'">Choco Cooky</button>
+  <p>v<span style="color: #bfbfbf;">0</span>.<span style="color: #007fff; text-shadow: 0px 0px 4px #003f7f, 0px 0px 4px #003f7f;">θ</span></p>
   <h1>
     Websites that I made. It doesn't look like there's that much, but... I just joined.
   </h1>
@@ -67,7 +69,7 @@
   <button onclick="document.getElementById('i2').innerHTML = Number(document.getElementById('i1').innerHTML)**2">square</button><button onclick="document.getElementById('i2').innerHTML = Number(document.getElementById('i2').innerHTML)**2">square</button>
   <br>
   <h1 id="inc" style="text-shadow: 0px 0px 0px #ffffff;">0 (this number should increase)</h1>
-  <canvas id="rgbcan" width="160" height="90" onmousemove="let ct=document.getElementById('rgbcan').getContext('2d');ct.clearRect(0,0,160,90);ct.fillStyle=HSV1(rgbc,1,1);ct.fillRect(0,0,160,90);rgbc++;ct.fillStyle='#FFFFFF';ct.textAlign='center';ct.textBaseline='middle';ct.font='15px '+document.documentElement.style.fontFamily;ct.fillText(rgbc.toString(),80,45)"></canvas>
+  <canvas id="rgbcan" width="160" height="90" onmousemove="let ct=document.getElementById('rgbcan').getContext('2d');ct.clearRect(0,0,160,90);ct.fillStyle=HSV1(rgbc,1,1);ct.fillRect(0,0,160,90);rgbc++;ct.fillStyle='#FFFFFF';ct.textAlign='center';ct.textBaseline='middle';ct.font='15px '+window.getComputedStyle(document.documentElement).fontFamily;ct.fillText(rgbc.toString(),80,45)"></canvas>
   <script>
     let rgbc = 0
     function mod(x, y) {
